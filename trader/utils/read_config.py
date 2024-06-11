@@ -35,17 +35,17 @@ command_timeout = 5
 ignore_inst = WH,bb,JR,RI,RS,LR,PM,im
 
 [REDIS]
-host = 127.0.0.1
+host = redis_trade
 port = 6379
 db = 0
 encoding = utf-8
 
 [MYSQL]
-host = 127.0.0.1
-port = 3306
-db = QuantDB
-user = quant
-password = 123456
+db=trade
+host=mysql_trade
+port=3306
+user=root
+password=root123
 
 [QuantDL]
 api_key = 123456
@@ -73,6 +73,6 @@ config.read(config_file)
 
 ctp_errors = {}
 ctp_xml_path = 'D:/github/trader/trader/utils/error.xml' if sys.platform == 'win32' \
-    else '/root/gitee/trader/trader/utils/error.xml'
+    else '/home/root/bigbrothertrade/trader/utils/error.xml'
 for error in ET.parse(ctp_xml_path).getroot():
     ctp_errors[int(error.attrib['value'])] = error.attrib['prompt']
