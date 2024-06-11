@@ -73,6 +73,6 @@ config.read(config_file)
 
 ctp_errors = {}
 ctp_xml_path = 'D:/github/trader/trader/utils/error.xml' if sys.platform == 'win32' \
-    else '/home/root/bigbrothertrade/trader/utils/error.xml'
+    else '/home/root/bigbrothertrade/trader/trader/utils/error.xml'
 for error in ET.parse(ctp_xml_path).getroot():
     ctp_errors[int(error.attrib['value'])] = error.attrib['prompt']
